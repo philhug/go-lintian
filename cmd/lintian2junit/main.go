@@ -17,6 +17,9 @@ func main() {
 	for scanner.Scan() {
 		s := scanner.Text()
 		ss := strings.SplitN(s, ": ", 3)
+		if len(ss) < 3 {
+			continue
+		}
 		tc := jtypes.Testcase{
 			Id: ss[1],
 			Name: ss[1],
